@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>로또 당첨 횟수를 알아보자.</h1>
+  <hr>
+  <h3>이번 회차 당첨 번호 : {{ this_week }}</h3>
+  {{ pick }}
+  {{ result }}
+  <ul>
+    {% comment %} {% for win in wins %}
+      <li> {{ forloop.counter }}등 : {{ win }}번</li>
+    {% endfor %}
+    <li> 꽝 : {{ fail }번}</li> {% endcomment %}
+  </ul>
+{% endblock %}
