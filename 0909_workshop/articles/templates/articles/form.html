@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+  {% if request.resolver_match.url_name == 'create' %}
+    <h1>CREATE</h1>
+  {% elif request.resolver_match.url_name == 'update' %}
+    <h1>UPDATE</h1>
+  {% endif %}
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" class="btn btn-primary">
+  </form>
+  <a href="{% url 'articles:index' %}">뒤로</a>
+{% endblock content %}

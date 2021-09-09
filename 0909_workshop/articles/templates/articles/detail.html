@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-6">
+      <img src="{{ article.image.url }}" alt="">
+    </div>
+    <div class="col-6">
+      <p>제목: {{ article.title }}</p>
+      <p>내용: {{ article.content }}</p>
+      <p>작성시간: {{ article.created_at }}</p>
+      <p>수정시간: {{ article.updated_at }}</p>
+      <hr>
+      <div>
+        <a href="{% url 'articles:update' article.pk %}" class="btn btn-warning">수정</a>
+        <form action="{% url 'articles:delete' article.pk %}" method="POST" class="d-inline">
+          {% csrf_token %}
+          <input type="submit" value="삭제" class="btn btn-danger">
+        </form>
+      </div>
+      <a href="{% url 'articles:index' %}">뒤로</a>
+    </div>
+  </div>
+{% endblock content %}

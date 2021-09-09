@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+  {% if  request.resolver_match.url_name == 'create' %}
+    <h1 class="text-center">New</h1>
+  {% elif request.resolver_match.url_name == 'update' %}
+    <h1 class="text-center">Edit</h1>
+  {% endif %}
+
+  <div class="row">
+    <form action="" method="POST" class="col-6 offset-3">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% buttons submit="SAVE" reset="RESET" %}{% endbuttons %}
+    </form>
+    <a class="col-6 offset-3 text-decoration-none text-end" href="{% url 'articles:index' %}">BACK</a>
+  </div>
+{% endblock content %}
