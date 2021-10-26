@@ -1,8 +1,15 @@
 <h1>index</h1>
 
+<<<<<<< HEAD
 <h5>{{ user }}</h5>
 
 {% for article in articles %}
   <p>{{ article.title }}</p>
   <a href="{% url 'articles:detail' article.pk %}">글보기</a>
 {% endfor %}
+=======
+{% for article in articles %}
+  <p>{{ article.title }}</p>
+  <a href="{% url 'articles:detail' article.pk %}">글보기</a>
+{% endfor %}
+>>>>>>> fdb1a7bf510986878a22a39d23404433d2e59c6d
