@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import (
     UserCreationForm, 
@@ -11,6 +12,7 @@ from django.views.decorators.http import require_POST
 from django.contrib.auth.models import User
 from .forms import CustomUserChangeForm
 
+request
 # Create your views here.
 
 # 유저 목록 조회

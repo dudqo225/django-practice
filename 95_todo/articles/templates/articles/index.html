@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h1>index</h1>
+  {% for article in user.article_set.all %}
+    <p>{{ article.title }}</p>
+    <p>{{ article.completed }}</p>
+    <p>{{ article.author }}</p>
+    <hr>
+  {% endfor %}
+{% endblock  %}
